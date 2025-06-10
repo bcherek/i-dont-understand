@@ -1,29 +1,36 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+//"Stack" describes how the pages interact
+//with one another. Pages are added onto the stack and
+//removed one by one. That's what the arrow in
+//the top left does.
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+//Alternatively, you can use "Slot", which does not
+//have the back arrow.
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+function RootLayout() {
+  return <Stack
+    screenOptions={{
+      //top banner
+      headerStyle: {
+        backgroundColor : 'purple'
+      },
+      headerTintColor: 'white',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 20
+      },
+      //main page 
+      contentStyle: {
+        // paddingHorizontal: 10,
+        // paddingTop: 10,
+        backgroundColor: 'white',
+        alignItems: 'center',
+      }
+    }}>
+      <Stack.Screen name="index" options={{title: 'Home'}}/>
+    </Stack>;
 }
+
+export default RootLayout;
