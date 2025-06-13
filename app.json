@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.notesapp"
     },
     "web": {
       "bundler": "metro",
@@ -34,23 +35,18 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      ["expo-font",
-      {
-        "fonts": ["./node_modules/@react-native-vector-icons/simple-line-icons/fonts/SimpleLineIcons.ttf"],
-        "android": {
+      [
+        "expo-font",
+        {
           "fonts": [
-            {
-              "fontFamily": "Inter",
-              "fontDefinitions": [
-                {
-                  "path": "assets/fonts/Inter-VariableFont_opsz,wght.ttf",
-                  "weight": 800
-                }
-              ]
-            }
-          ]
+            "./node_modules/@react-native-vector-icons/simple-line-icons/fonts/SimpleLineIcons.ttf"
+          ],
+          "android": {
+            "fonts": [
+            ]
+          }
         }
-      }]
+      ]
     ],
     "experiments": {
       "typedRoutes": true
