@@ -1,14 +1,17 @@
+import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { Stack } from "expo-router";
 
 function NoteLayout(){
       return <Stack
-    screenOptions={{
-      //main page 
-      contentStyle: {
-        backgroundColor: 'blue',
-      }
-    }}>
+    screenOptions = {myScreenOpts}>
     </Stack>;
 };
 
 export default NoteLayout;
+
+const myScreenOpts: NativeStackNavigationOptions = {
+  headerShown : false,
+  contentStyle : {
+    backgroundColor : "white",
+  }
+};  

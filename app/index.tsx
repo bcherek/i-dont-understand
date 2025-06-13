@@ -28,8 +28,8 @@ export default Index;
 const styles = StyleSheet.create({
   myCont: {
     flex: 1,
-    justifyContent: `center`,
-    alignItems: "center",
+    // justifyContent: `center`,
+    // alignItems: "center",
     // padding: 20
   } as ViewStyle, //type assertion
   myImg : {
